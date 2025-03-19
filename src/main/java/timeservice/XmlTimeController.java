@@ -1,31 +1,21 @@
 package timeservice;
 
-
-
-
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-
+import org.springframework.stereotype.Controller;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 
-@RestController
-@RequestMapping("/api")
-public class TimeController {
+@Controller
+public class XmlTimeController {
 
-    @GetMapping("minsk")
     public String getMinskTime() {
         return getTime("Europe/Minsk");
     }
 
-    @GetMapping("washington")
     public String getWashingtonTime() {
         return getTime("America/New_York");
     }
 
-    @GetMapping("beijing")
     public String getBeijingTime() {
         return getTime("Asia/Shanghai");
     }
